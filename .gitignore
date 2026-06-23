@@ -1,0 +1,39 @@
+## Node
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+## Build output
+dist/
+build/
+.vite/
+
+## Env files
+.env
+.env.*
+
+## Editor directories and system files
+.DS_Store
+.vscode/
+.idea/
+
+## Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+## TypeScript
+*.tsbuildinfo
+
+## Static assets
+.cache/
+
+## Mac
+.Spotlight-V100
+
+## Misc
+.turbo/
+coverage/
+reports/
