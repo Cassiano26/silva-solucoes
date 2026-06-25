@@ -1,5 +1,8 @@
+"use client";
+
 import { ShoppingCart, Phone } from "lucide-react";
-import logo from "../../assets/logo.png";
+import Image from "next/image";
+import logo from "@/assets/logo.png";
 
 export default function Header() {
   return (
@@ -7,10 +10,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-2">
-            <img
+            <Image
               src={logo}
               alt="Silva Hidráulica & Aquecimento"
               className="h-16 w-auto object-contain"
+              height={64}
+              priority
             />
           </div>
 

@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { ArrowLeft, ExternalLink, Zap } from "lucide-react";
 
 type Product = {
@@ -68,13 +71,13 @@ export default function BombasMotoresPage() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0e2438] via-[#1d4f73] to-[#2b7099]" />
         <div className="relative max-w-7xl mx-auto text-white">
-          <a
-            href="#/"
+          <Link
+            href="/"
             className="inline-flex items-center gap-2 border border-white/30 rounded-full px-4 py-2 hover:bg-white/10 transition-colors"
           >
             <ArrowLeft size={18} />
             <span>Voltar para inicio</span>
-          </a>
+          </Link>
 
           <div className="mt-10 max-w-3xl">
             <p className="uppercase tracking-[0.2em] text-sm text-white/80 mb-4">Catalogo</p>

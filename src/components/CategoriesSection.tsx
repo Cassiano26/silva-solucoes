@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { Droplet, Sun, Flame, Waves, Zap, Package } from "lucide-react";
 
 export default function CategoriesSection() {
@@ -56,11 +59,10 @@ export default function CategoriesSection() {
           {categories.map((category, index) => {
             const Icon = category.icon;
             const isBombasMotores = category.title === "Bombas e Motores";
-            const Wrapper = isBombasMotores ? "a" : "div";
-            return (
-              <Wrapper
+            return isBombasMotores ? (
+              <Link
                 key={index}
-                href={isBombasMotores ? "#/bombas-e-motores" : undefined}
+                href="/bombas-e-motores"
                 className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:scale-105"
               >
                 <div className="relative h-64 overflow-hidden">
@@ -80,7 +82,30 @@ export default function CategoriesSection() {
                   </h3>
                   <p className="text-gray-600">{category.description}</p>
                 </div>
-              </Wrapper>
+              </Link>
+            ) : (
+              <div
+                key={index}
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:scale-105"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                    <Icon size={24} style={{ color: 'var(--silva-blue-medium)' }} />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl mb-2" style={{ color: 'var(--silva-blue-dark)' }}>
+                    {category.title}
+                  </h3>
+                  <p className="text-gray-600">{category.description}</p>
+                </div>
+              </div>
             );
           })}
         </div>

@@ -8,10 +8,13 @@ yarn.lock
 dist/
 build/
 .vite/
+.next/
+out/
 
 ## Env files
 .env
 .env.*
+!.env.example
 
 ## Editor directories and system files
 .DS_Store
