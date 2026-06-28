@@ -1,4 +1,4 @@
 {
-  "installCommand": "corepack enable && corepack prepare pnpm@10.17.1 --activate && pnpm install",
-  "buildCommand": "pnpm build"
+  "installCommand": "npx -y pnpm@10.17.1 install",
+  "buildCommand": "npx -y pnpm@10.17.1 build"
 }
