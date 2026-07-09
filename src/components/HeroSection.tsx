@@ -4,7 +4,7 @@ export default function HeroSection() {
   const whatsappBudgetLink = "https://wa.me/554898059628?text=ola%20tenho%20interesse%20nos%20produtos";
 
   return (
-    <section className="relative h-screen flex items-center justify-center" id="home">
+    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-12" id="home">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div className="relative z-10 max-w-7xl sm:px-6 lg:px-8 mx-auto  text-white">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight">
             Todas as soluções para hidráulica, aquecimento e piscinas em um só lugar.
@@ -34,11 +34,12 @@ export default function HeroSection() {
               <span>Solicitar Orçamento</span>
               <ArrowRight size={20} />
             </a>
-            <button
+            <a
+              href="#produtos"
               className="flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-white transition-all hover:bg-white/10"
             >
               <span>Ver Produtos</span>
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

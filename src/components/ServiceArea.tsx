@@ -11,8 +11,8 @@ export default function ServiceArea() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: 'var(--silva-blue-dark)' }}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 " style={{ backgroundColor: 'var(--silva-blue-dark)' }}>
+      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="flex items-center gap-2 mb-6">

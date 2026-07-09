@@ -11,8 +11,8 @@ export default function BrandsSection() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16  bg-gray-50">
+      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl mb-4" style={{ color: 'var(--silva-blue-dark)' }}>
             Marcas Parceiras

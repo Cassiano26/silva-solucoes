@@ -4,7 +4,7 @@ export default function FinalCTA() {
   const whatsappBudgetLink = "https://wa.me/554898059628?text=ola%20tenho%20interesse%20nos%20produtos";
 
   return (
-    <section className="relative py-32 px-4 sm:px-6 lg:px-8">
+    <section className="relative py-32 ">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -34,7 +34,7 @@ export default function FinalCTA() {
             <ArrowRight size={20} />
           </a>
           <a
-            href="https://wa.me/5548999999999"
+            href="https://wa.me/554898059628"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-white transition-all hover:bg-white/10 text-lg"

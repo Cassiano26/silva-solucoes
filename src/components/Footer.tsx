@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube } from "luc
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: 'var(--silva-blue-dark)' }} id="contato">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto  py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="mb-6">

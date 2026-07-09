@@ -33,8 +33,8 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24  bg-gray-50">
+      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-6" style={{ color: 'var(--silva-blue-dark)' }}>
             O Que Nossos Clientes Dizem
