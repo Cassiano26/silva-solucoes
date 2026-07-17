@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/index.css";
 import { CartProvider } from "@/context/CartContext";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Silva Soluções",
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body suppressHydrationWarning>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          {children}
+          <Toaster richColors position="bottom-right" />
+        </CartProvider>
       </body>
     </html>
   );
