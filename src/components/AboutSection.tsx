@@ -85,8 +85,8 @@ const portableTextComponents: PortableTextComponents = {
 };
 
 const defaultStats: AboutStat[] = [
-  { value: "14+", label: "Anos de Experiência" },
-  { value: "1000+", label: "Projetos Entregues" },
+  { value: "20+", label: "Anos de Experiência" },
+  { value: "300+", label: "Projetos Entregues" },
   { value: "100%", label: "Compromisso e Qualidade" },
 ];
 
@@ -111,7 +111,7 @@ export default async function AboutSection() {
   return (
     <section
       id="sobre"
-      className="relative py-24  overflow-hidden"
+      className="relative py-16 md:py-24 overflow-hidden"
       style={{ backgroundColor: "var(--muted)" }}
     >
       <div
@@ -123,20 +123,20 @@ export default async function AboutSection() {
         style={{ backgroundColor: "var(--silva-yellow)" }}
       />
 
-      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto relative">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto relative">
+        <div className="text-center mb-10 md:mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-sm mb-6"
             style={{ backgroundColor: "rgba(245, 158, 11, 0.12)", color: "var(--silva-yellow)" }}
           >
             {about.tagline || "Quem Somos"}
           </span>
-          <h2 className="text-4xl md:text-5xl" style={{ color: "var(--silva-blue-dark)" }}>
+          <h2 className="text-3xl md:text-5xl" style={{ color: "var(--silva-blue-dark)" }}>
             {about.title || "Sobre Nós"}
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {images.length > 0 && (
             <div className="order-2 lg:order-1">
               <AboutImagesCarousel images={images} />
@@ -144,13 +144,13 @@ export default async function AboutSection() {
           )}
 
           <div className={images.length > 0 ? "order-1 lg:order-2" : "lg:col-span-2 max-w-4xl mx-auto"}>
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl">
+            <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl">
               <PortableText value={about.body} components={portableTextComponents} />
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 md:mt-16">
           {stats.map((stat, index) => {
             const Icon = decorativeIcons[index % decorativeIcons.length];
             return (
