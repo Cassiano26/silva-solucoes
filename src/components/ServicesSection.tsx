@@ -1,6 +1,11 @@
 import { Wrench, Sun, Flame, Waves, Home, Building2 } from "lucide-react";
+import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 export default function ServicesSection() {
+  const whatsappVisitLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    "Olá! Gostaria de solicitar uma visita técnica."
+  )}`;
+
   const services = [
     {
       icon: Wrench,
@@ -15,7 +20,7 @@ export default function ServicesSection() {
     {
       icon: Flame,
       title: "Aquecimento de Água",
-      description: "Instalação e manutenção de aquecedores e boilers para residências, comércios e condomínios."
+      description: "Instalação e manutenção de aquecedores, boilers e placas de aquecimento solar para residências, comércios e condomínios."
     },
     {
       icon: Waves,
@@ -24,35 +29,35 @@ export default function ServicesSection() {
     },
     {
       icon: Home,
-      title: "Projetos Residenciais",
-      description: "Projetos personalizados para sua casa com acompanhamento técnico completo."
+      title: "Serviços Residenciais",
+      description: "Instalação e manutenção para sua casa com acompanhamento técnico completo."
     },
     {
       icon: Building2,
-      title: "Projetos Comerciais",
+      title: "Serviços Comerciais",
       description: "Soluções em grande escala para condomínios, empresas e indústrias."
     }
   ];
 
   return (
-    <section className="py-24  bg-white" id="servicos">
-      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-6" style={{ color: 'var(--silva-blue-dark)' }}>
-            Serviços Especializados
+    <section className="py-16 md:py-24 bg-white" id="servicos">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-5xl mb-4 md:mb-6" style={{ color: 'var(--silva-blue-dark)' }}>
+            Serviços
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Equipe técnica qualificada para instalação, manutenção e projetos personalizados
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Equipe técnica qualificada para instalação e manutenção
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
-                className="group bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-current"
+                className="group bg-gray-50 rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-current"
                 style={{ '--tw-border-opacity': '0.1' } as React.CSSProperties}
               >
                 <div
@@ -61,7 +66,7 @@ export default function ServicesSection() {
                 >
                   <Icon size={32} className="text-white" />
                 </div>
-                <h3 className="text-xl mb-3" style={{ color: 'var(--silva-blue-dark)' }}>
+                <h3 className="text-lg md:text-xl mb-3" style={{ color: 'var(--silva-blue-dark)' }}>
                   {service.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">{service.description}</p>
@@ -71,12 +76,15 @@ export default function ServicesSection() {
         </div>
 
         <div className="text-center">
-          <button
-            className="px-8 py-4 rounded-lg transition-all hover:shadow-xl hover:scale-105"
+          <a
+            href={whatsappVisitLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base rounded-lg transition-all hover:shadow-xl hover:scale-105"
             style={{ backgroundColor: 'var(--silva-blue-medium)', color: 'white' }}
           >
             Solicitar Visita Técnica
-          </button>
+          </a>
         </div>
       </div>
     </section>

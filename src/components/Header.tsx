@@ -2,15 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ShoppingCart, Phone } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/logo.png";
+import LogoMark from "@/components/LogoMark";
+import LogoWordmark from "@/components/LogoWordmark";
 import { useCart } from "@/context/CartContext";
+import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 export default function Header() {
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
   const { totalItems } = useCart();
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    "Olá! Gostaria de falar com a Silva Hidráulica & Aquecimento."
+  )}`;
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;
@@ -36,46 +40,35 @@ export default function Header() {
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto ">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src={logo}
-              alt="Silva Hidráulica & Aquecimento"
-              className="h-16 w-auto object-contain"
-              height={64}
-              priority
-            />
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3" aria-label="Silva Aquecimento & Hidráulica">
+            <LogoMark className="h-11 w-11 md:h-14 md:w-14 shrink-0" />
+            <LogoWordmark className="hidden sm:block h-7 md:h-9 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
-            <Link href="/#produtos" className="text-sm hover:opacity-70 transition-opacity" style={{ color: 'var(--silva-blue-dark)' }}>
-              Produtos
-            </Link>
             <Link href="/#servicos" className="text-sm hover:opacity-70 transition-opacity" style={{ color: 'var(--silva-blue-dark)' }}>
               Serviços
             </Link>
-            <Link href="/#projetos" className="text-sm hover:opacity-70 transition-opacity" style={{ color: 'var(--silva-blue-dark)' }}>
-              Projetos
+            <Link href="/#produtos" className="text-sm hover:opacity-70 transition-opacity" style={{ color: 'var(--silva-blue-dark)' }}>
+              Produtos
             </Link>
-            <Link href="/sobre" className="text-sm hover:opacity-70 transition-opacity" style={{ color: 'var(--silva-blue-dark)' }}>
+            <Link href="/#sobre" className="text-sm hover:opacity-70 transition-opacity" style={{ color: 'var(--silva-blue-dark)' }}>
               Sobre
             </Link>
             {/* <Link href="/#blog" className="text-sm hover:opacity-70 transition-opacity" style={{ color: 'var(--silva-blue-dark)' }}>
               Blog
             </Link> */}
-            <Link href="/#contato" className="text-sm hover:opacity-70 transition-opacity" style={{ color: 'var(--silva-blue-dark)' }}>
-              Contato
-            </Link>
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <Link
               href="/carrinho"
               className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors"
               aria-label="Carrinho de compras"
             >
-              <ShoppingCart size={24} style={{ color: 'var(--silva-blue-dark)' }} />
+              <ShoppingCart className="w-5 h-5 md:w-6 md:h-6" style={{ color: 'var(--silva-blue-dark)' }} />
               {totalItems > 0 && (
                 <span
                   className="absolute -top-1 -right-1 flex items-center justify-center min-w-5 h-5 px-1 rounded-full text-xs text-white"
@@ -86,14 +79,15 @@ export default function Header() {
               )}
             </Link>
             <a
-              href="https://wa.me/554898059628"
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 px-6 py-3 rounded-lg transition-all hover:shadow-lg"
+              className="flex items-center gap-2 p-2.5 sm:px-5 sm:py-2.5 rounded-lg transition-all hover:shadow-lg"
               style={{ backgroundColor: 'var(--silva-yellow)', color: 'white' }}
+              aria-label="Falar no WhatsApp"
             >
-              <Phone size={18} />
-              <span className="text-sm">WhatsApp</span>
+              <Phone className="w-5 h-5 shrink-0" />
+              <span className="hidden sm:inline text-sm whitespace-nowrap">WhatsApp</span>
             </a>
           </div>
         </div>
