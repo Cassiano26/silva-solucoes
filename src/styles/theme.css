@@ -41,9 +41,9 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Custom SILVA colors - derivadas do símbolo (sol e ondas) */
-  --silva-blue-dark: #255853;   /* teal profundo: títulos e fundos escuros */
-  --silva-blue-medium: #2f6b66; /* teal médio: links, ícones, bordas */
-  --silva-blue-light: #71b6af;  /* teal do símbolo: detalhes e realces */
+  --silva-blue-dark: #254358;   /* azul profundo: títulos e fundos escuros */
+  --silva-blue-medium: #2f526b; /* azul médio: links, ícones, bordas */
+  --silva-blue-light: #7199b6;  /* azul pastel do símbolo: detalhes e realces */
   --silva-yellow: #f58058;      /* terracota do símbolo: CTAs */
   --silva-gold: #f1c979;        /* areia do símbolo: destaques suaves */
 
@@ -51,7 +51,7 @@
   --silva-terracotta: #f58058;
   --silva-orange: #f79a4e;
   --silva-sand: #f1c979;
-  --silva-teal: #71b6af;
+  --silva-blue-pastel: #7199b6;
   --silva-cream: #fef8ee;
 }
 

@@ -39,7 +39,7 @@ export default function LogoWordmark({ className, variant = "default" }: LogoWor
       >
         AQUECIMENTO
         <tspan fill={nameColor}> &amp; </tspan>
-        <tspan fill="var(--silva-teal)">HIDRÁULICA</tspan>
+        <tspan fill="var(--silva-blue-pastel)">HIDRÁULICA</tspan>
       </text>
     </svg>
   );
