@@ -13,10 +13,7 @@ export default function CartPageContent() {
     return (
       <div className="bg-white rounded-2xl border border-gray-100 p-8 md:p-12 text-center">
         <ShoppingBag className="mx-auto mb-4 text-gray-300 w-10 h-10 md:w-12 md:h-12" />
-        <p className="text-gray-500 mb-6">Seu carrinho está vazio.</p>
-        <Link href="/produtos/bombas-e-motores">
-          <Button size="lg">Ver produtos</Button>
-        </Link>
+        <p className="text-gray-500">Seu carrinho está vazio.</p>
       </div>
     );
   }
