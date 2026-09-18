@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Tag, CreditCard } from "lucide-react";
@@ -7,6 +8,8 @@ import ProductDetailActions from "@/components/ProductDetailActions";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { Badge } from "@/components/ui/badge";
+import { SITE_URL } from "@/lib/site";
+import { breadcrumbJsonLd, productJsonLd } from "@/lib/structured-data";
 import {
   Accordion,
   AccordionContent,
@@ -86,6 +89,37 @@ function formatCurrency(value?: number) {
   return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await getProduct(slug);
+
+  if (!product) {
+    return { title: "Produto não encontrado", robots: { index: false, follow: true } };
+  }
+
+  const description =
+    product.description?.replace(/\s+/g, " ").trim().slice(0, 160) ??
+    `${product.title} na Silva Aquecimento & Hidráulica, em Florianópolis.`;
+  const image = product.image ? urlFor(product.image).width(1200).url() : undefined;
+
+  return {
+    title: product.title,
+    description,
+    alternates: { canonical: `/produto/${slug}` },
+    openGraph: {
+      type: "website",
+      title: product.title,
+      description,
+      url: `${SITE_URL}/produto/${slug}`,
+      ...(image ? { images: [{ url: image, width: 1200, height: 1200, alt: product.title }] } : {}),
+    },
+  };
+}
+
 export default async function ProdutoPage({
   params,
 }: {
@@ -107,8 +141,30 @@ export default async function ProdutoPage({
   const imageUrl = product.image ? urlFor(product.image).width(800).height(800).url() : undefined;
   const productUrl = `/produto/${product.slug.current}`;
 
+  const jsonLd = [
+    productJsonLd({
+      title: product.title,
+      description: product.description,
+      image: imageUrl,
+      slug: product.slug.current,
+      cashPrice: product.cashPrice,
+      available: product.available,
+    }),
+    breadcrumbJsonLd([
+      { name: "Início", url: "/" },
+      ...(product.category
+        ? [{ name: product.category.title, url: `/produtos/${product.category.slug.current}` }]
+        : []),
+      { name: product.title, url: productUrl },
+    ]),
+  ];
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="bg-gray-50 min-h-screen pt-28 pb-16 ">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">

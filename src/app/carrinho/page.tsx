@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartPageContent from "@/components/CartPageContent";
+
+export const metadata: Metadata = {
+  title: "Meu carrinho",
+  robots: { index: false, follow: true },
+};
 
 export default function CarrinhoRoute() {
   return (

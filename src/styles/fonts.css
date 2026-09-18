@@ -1,0 +1,14 @@
+/**
+ * A Roboto é carregada por next/font/google em src/app/layout.tsx,
+ * que expõe a variável --font-roboto e cuida do preload e do
+ * font-display: swap. Aqui ela só entra na cadeia de fontes.
+ */
+:root {
+  --font-sans:
+    var(--font-roboto), system-ui, -apple-system, "Segoe UI", Helvetica,
+    Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
