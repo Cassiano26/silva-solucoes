@@ -3,7 +3,7 @@ import { Bot, Sparkles, CheckCircle2 } from "lucide-react";
 export default function AIAssistantSection() {
   return (
     <section className="py-24 " style={{ backgroundColor: 'var(--silva-blue-dark)' }}>
-      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: 'var(--silva-yellow)' }}>
             <Sparkles size={20} className="text-white" />

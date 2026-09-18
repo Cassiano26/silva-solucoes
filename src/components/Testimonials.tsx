@@ -33,22 +33,22 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24  bg-gray-50">
-      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-6" style={{ color: 'var(--silva-blue-dark)' }}>
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-5xl mb-4 md:mb-6" style={{ color: 'var(--silva-blue-dark)' }}>
             O Que Nossos Clientes Dizem
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
             Satisfação garantida em cada projeto realizado
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow relative"
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow relative"
             >
               <Quote size={48} className="absolute top-4 right-4 opacity-10" style={{ color: 'var(--silva-blue-dark)' }} />
 

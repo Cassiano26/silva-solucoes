@@ -39,7 +39,7 @@ export default async function CategoriesSection() {
 
   return (
     <section
-      className="relative py-24  overflow-hidden"
+      className="relative py-16 md:py-24 overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%)' }}
       id="produtos"
     >
@@ -53,23 +53,23 @@ export default async function CategoriesSection() {
         style={{ background: 'var(--silva-yellow)' }}
       />
 
-      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto relative sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto relative">
+        <div className="text-center mb-10 md:mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-sm mb-4 tracking-wide uppercase"
             style={{ backgroundColor: 'rgba(245, 158, 11, 0.12)', color: 'var(--silva-yellow)' }}
           >
             Nosso catálogo
           </span>
-          <h2 className="text-4xl md:text-5xl mb-6" style={{ color: 'var(--silva-blue-dark)' }}>
+          <h2 className="text-3xl md:text-5xl mb-4 md:mb-6" style={{ color: 'var(--silva-blue-dark)' }}>
             Categorias Principais
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
             Encontre tudo que você precisa para seus projetos hidráulicos, aquecimento e piscinas
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 md:gap-8">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
@@ -78,7 +78,7 @@ export default async function CategoriesSection() {
                 href={`/produtos/${category.slug}`}
                 className="group relative flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-transparent hover:border-[var(--silva-yellow)]/40 transition-all duration-300 cursor-pointer hover:-translate-y-1"
               >
-                <div className="relative h-64 shrink-0 overflow-hidden">
+                <div className="relative h-52 md:h-64 shrink-0 overflow-hidden">
                   {category.image ? (
                     <img
                       src={category.image}
@@ -99,12 +99,12 @@ export default async function CategoriesSection() {
                   >
                     <Icon size={24} style={{ color: 'var(--silva-blue-medium)' }} />
                   </div>
-                  <h3 className="absolute bottom-4 left-6 right-6 text-2xl text-white drop-shadow-md">
+                  <h3 className="absolute bottom-4 left-5 right-5 md:left-6 md:right-6 text-xl md:text-2xl text-white drop-shadow-md">
                     {category.title}
                   </h3>
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <p className="text-gray-600 flex-1">{category.description}</p>
+                <div className="p-5 md:p-6 flex flex-col flex-1">
+                  <p className="text-sm md:text-base text-gray-600 flex-1">{category.description}</p>
                   <span
                     className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium group-hover:gap-2.5 transition-all"
                     style={{ color: 'var(--silva-blue-medium)' }}

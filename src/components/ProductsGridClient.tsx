@@ -106,7 +106,7 @@ function ProductCardGrid({
           onClick={onAddToCart}
           disabled={product.available === false}
           className="mt-4 w-full py-2.5 rounded-xl text-sm font-semibold transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed"
-          style={{ backgroundColor: "var(--silva-yellow)", color: "#0f2744" }}
+          style={{ backgroundColor: "var(--silva-yellow)", color: "white" }}
         >
           <ShoppingCart size={15} />
           Adicionar ao carrinho
@@ -190,7 +190,7 @@ function ProductCardRow({
           onClick={onAddToCart}
           disabled={product.available === false}
           className="px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:opacity-90 flex items-center gap-1.5 disabled:opacity-40 disabled:cursor-not-allowed"
-          style={{ backgroundColor: "var(--silva-yellow)", color: "#0f2744" }}
+          style={{ backgroundColor: "var(--silva-yellow)", color: "white" }}
         >
           <ShoppingCart size={14} />
           Comprar

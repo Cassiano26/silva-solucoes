@@ -56,7 +56,7 @@ export default async function FeaturedProducts() {
 
   return (
     <section className="py-24 " style={{ backgroundColor: 'var(--silva-blue-dark)' }}>
-      <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-6 text-white">
             Produtos em Destaque

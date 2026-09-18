@@ -84,8 +84,8 @@ export default function ProductDetailActions({
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all hover:shadow-lg text-white"
-          style={{ backgroundColor: "var(--silva-yellow)" }}
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all hover:shadow-lg"
+          style={{ backgroundColor: "var(--silva-yellow)", color: "white" }}
         >
           <MessageCircle size={18} />
           Comprar via WhatsApp

@@ -111,7 +111,7 @@ export default async function ProdutoPage({
     <div className="min-h-screen">
       <Header />
       <main className="bg-gray-50 min-h-screen pt-28 pb-16 ">
-        <div className="max-w-7xl sm:px-6 lg:px-8 mx-auto">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
           <nav className="flex items-center flex-wrap gap-1 text-sm text-gray-500 mb-6">
             <Link href="/" className="hover:text-gray-700">
               Início

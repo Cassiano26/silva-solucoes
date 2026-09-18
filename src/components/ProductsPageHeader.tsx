@@ -119,7 +119,7 @@ export default function ProductsPageHeader({
           {totalItems > 0 && (
             <span
               className="absolute -top-2 -right-2 w-5 h-5 rounded-full text-xs flex items-center justify-center font-bold"
-              style={{ backgroundColor: "var(--silva-yellow)", color: "#0f2744" }}
+              style={{ backgroundColor: "var(--silva-yellow)", color: "white" }}
             >
               {totalItems > 9 ? "9+" : totalItems}
             </span>
