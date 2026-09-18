@@ -16,7 +16,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE.name} | Aquecimento, hidráulica e piscinas em Florianópolis`,
+    default: `${SITE.name} | Florianópolis e região`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     locale: SITE.locale,
     url: SITE_URL,
     siteName: SITE.name,
-    title: `${SITE.name} | Aquecimento, hidráulica e piscinas em Florianópolis`,
+    title: `${SITE.name} | Florianópolis e região`,
     description: SITE.description,
     images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} | Aquecimento e hidráulica em Florianópolis`,
+    title: `${SITE.name} | Florianópolis e região`,
     description: SITE.description,
     images: [OG_IMAGE.url],
   },

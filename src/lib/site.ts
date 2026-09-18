@@ -4,7 +4,10 @@
  */
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://silvasolucoes.com.br"
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://silva-solucoes.vercel.app")
 ).replace(/\/$/, "");
 
 export const SITE = {
@@ -13,7 +16,7 @@ export const SITE = {
   legalName: "Silva Aquecimento & Hidráulica",
   url: SITE_URL,
   description:
-    "Instalação e manutenção de sistemas de aquecimento de água, hidráulica, bombas e aquecimento de piscinas em Florianópolis e região. Também vendemos aquecedores, boilers, placas solares e bombas.",
+    "Aquecedores, boilers, placas solares, bombas e piscinas: venda, instalação e manutenção para casas, comércios e condomínios. Pré-orçamento pelo WhatsApp.",
   locale: "pt_BR",
   phone: "+55 48 98805-9628",
   phoneRaw: "554898059628",

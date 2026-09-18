@@ -1,7 +1,10 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 export default function HeroSection() {
-  const whatsappBudgetLink = "https://wa.me/554898059628?text=ola%20tenho%20interesse%20nos%20produtos";
+  const whatsappBudgetLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    "Olá! Gostaria de um pré-orçamento. Meu interesse é em:"
+  )}`;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 md:pt-28 pb-12" id="home">
