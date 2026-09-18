@@ -14,7 +14,7 @@ export default function FinalCTA() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1660330589257-813305a4a383?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920)',
+          backgroundImage: 'url(/instalacao-placas-solares.jpg)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70"></div>
